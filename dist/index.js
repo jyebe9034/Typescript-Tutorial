@@ -57,6 +57,7 @@ let employee = {
     }
 };
 console.log(employee);
+// Union Types
 function kgToLbs(weight) {
     // Narrowing
     if (typeof weight === 'number')
@@ -66,4 +67,24 @@ function kgToLbs(weight) {
 }
 kgToLbs(10);
 kgToLbs('10kg');
+let textBox = {
+    drag: () => { },
+    resize: () => { }
+};
+let quantity = 100;
+// Nullable Type
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log('Hola!');
+}
+greet(null);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(1);
+// if (customer !== null && customer !== undefined)
+// Optional property access operator
+console.log(customer?.birthday);
 //# sourceMappingURL=index.js.map
